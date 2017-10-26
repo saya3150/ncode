@@ -2,8 +2,6 @@
 $filename = './index.html';
 $fp = fopen($filename,'r');
 $state=0;
-$ncodeid="n4976ea";
-$atai=1;
 $array=array();
 try{
 	$db=new SQLite3('./'.$ncodeid.'.sqlite3');
@@ -28,11 +26,7 @@ if($fp){
 	while ($line = fgets($fp)){
 		if(strpos($line,'<p class="novel_subtitle">') !== false){
 		      $state=1;
-		      $num=strpos($line,'<p class="novel_subtitle">');
-		      $string=substr($line,$num+29);
-			$num=strpos($string,'</p>');
-			$string=substr($string,0,$num);
-			$db->exec('insert into data values('.$atai.',"'.$string.'")');
+			$db->exec('insert into data values('.$atai.',"'.$line.'")');
                 }
 		if(strpos($line,'<div class="novel_bn">') !== false)$state=0;
 		if($state==1){
