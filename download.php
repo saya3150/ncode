@@ -31,7 +31,7 @@ while($row=$result->fetchArray()){
 		require('./fileedit.php');
 		}
 		exec("rm index.html");
-		sleep(10);
+		sleep(2);
 		$beforenum=$atai;
 	}
 }
