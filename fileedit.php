@@ -17,7 +17,11 @@ if(!file_exists("./ncode/".$ncodeid)){
 }
 if($fp){
 	while ($line = fgets($fp)){
-		if(strpos($line,'<div id="novel_no">') !== false)$state=1;
+		if(strpos($line,'<p class="novel_subtitle">') !== false){
+                    $state=1;
+                    $num=strpos($line,'<p class="novel_subtitle">');
+                    
+                }
 		if(strpos($line,'<div class="novel_bn">') !== false)$state=0;
 		if($state==1){
 			array_push($array,$line);

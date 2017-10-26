@@ -4,9 +4,6 @@
 * 各ncodeごとに新たにデータベースを所持する.
 * そのデータベースはid,subtitleとする.
 *
-*
-*
-*
 */
 
 try{
@@ -16,14 +13,7 @@ try{
 	exit();
 
 }
-
 $result=$db->query("select * from meta");
-
-
-$ncodeid="n4976ea";
-$beforenum="2";
-
-
 while($row=$result->fetchArray()){
 	$ncodeid=$row["ncode"];
 	$beforenum=$row["latest"];
