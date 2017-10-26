@@ -34,7 +34,6 @@ if($fp){
 		}
 	}
 }
-print_r($array);
 fclose($fp);
 $filewrite_p="./ncode/".$ncodeid."/".$atai.".ncode";
 $fp=fopen($filewrite_p,'w');
