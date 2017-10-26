@@ -5,6 +5,13 @@ $state=0;
 $ncodeid="n4976ea";
 $atai=1;
 $array=array();
+try{
+	$db=new SQLite3('./'.$ncodeid.'.sqlite3');
+} catch (Exception $ex) {
+	print $e->getTraceAsString();
+	exit();
+
+}
 if(!file_exists("./ncode")){
 	if(!mkdir("./ncode")){
 		echo "ncodeフォルダを作成できませんでした.";
@@ -25,6 +32,7 @@ if($fp){
 		      $string=substr($line,$num+29);
 			$num=strpos($string,'</p>');
 			$string=substr($string,0,$num);
+			$db->exec('insert into data values('.$atai.',"'.$string.'")');
                 }
 		if(strpos($line,'<div class="novel_bn">') !== false)$state=0;
 		if($state==1){
