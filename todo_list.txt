@@ -1,2 +1,3 @@
 UAによる表示サイトの変更 http://monolio.com/memo/php/user-agent-page-change/
 適当なCSSの検索
+DBの作成php
