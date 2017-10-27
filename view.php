@@ -1,4 +1,16 @@
 <?php
+	if(!empty($_POST["ncode"])){
+		$ncode=$_POST["ncode"];
+	}else{
+		header("Location:./index.php");
+		exit();
+	}
+	if(!empty($_POST["num"])){
+		$num=$_POST["num"];
+	}else{
+		header("Location:./index.php");
+		exit();	
+	}
 
 ?>
 <html>
