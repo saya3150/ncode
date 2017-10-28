@@ -28,7 +28,9 @@ try{
 $result=$meta_db->query("select * from meta where ncodeid='".$ncode."'");
 $row=$result->fetchArray();
 $maintitle=$row["maintitle"];
-$result=$db->query("select * from data");
+$result=$db->query("select * from data where id=".$num);
+$row=$result->fetchArray();
+$subtitle=$row["subtitle"];
 ?>
 <html>
 <head>
@@ -36,5 +38,7 @@ $result=$db->query("select * from data");
 <title>view</title>
 </head>
 <body>
+    <h1><?php echo $maintitle; ?></h1>
+    <h2><?php echo $subtitle; ?></h2>
 </body>
 </html>
