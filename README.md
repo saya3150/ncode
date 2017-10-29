@@ -1,12 +1,12 @@
 # ncode
-##ブランチリスト
-###download
+## ブランチリスト
+### download
 ncodeからデータをダウンロードしてくる機構のブランチ
-###subtitle
+### subtitle
 subタイトルを.ncodeから取得する機構のブランチ
-###view
+### view
 ncodeファイルを展開するための機構のブランチ
-###index
+### index
 ncodeセレクトのページ作成ブランチ
-###database
+### database
 新たなncodeに対してdatabaseを作成するための機構のブランチ
