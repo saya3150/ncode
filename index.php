@@ -1,6 +1,6 @@
 <?php
-    if(!empty($_POST["ncode"])){
-        $ncode=$_POST["ncode"];
+    if(!empty($_GET["ncode"])){
+        $ncode=$_GET["ncode"];
         try{
             $db=new SQLite3('./meta.sqlite3');
         } catch (Exception $ex) {
