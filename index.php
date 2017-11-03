@@ -29,6 +29,7 @@ if(!empty($_GET["ncode"])){
 <title>ncode</title>
 </head>
 <body>
+
     <?php
         if(!empty($ncode)){
             echo "<h1>".$maintitle."</h1>";
@@ -40,6 +41,6 @@ if(!empty($_GET["ncode"])){
             }
         }
     ?>
-<h1></h1>
+
 </body>
 </html>
