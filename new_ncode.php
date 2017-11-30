@@ -27,6 +27,19 @@ while ($line = fgets($fp)){
     }
 }
 fclose($fp);
+$directory_path = "./ncode/".$ncode;    //この場合、一つ上の階層に「hoge」というディレクトリを作成する
+ $st=0;
+//「$directory_path」で指定されたディレクトリを作成する
+if(mkdir($directory_path, 0777)){
+    $st=0;
+}else{
+    echo "ERROR:Can't create folder";
+    exit();
+}
+$fp = fopen("./ncode/".$ncode."/ex",'w');
+fwrite($fp,$novel_ex);
+fclose($fp);
+exec("rm ".$ncode);
 ?>
 <html>
     <head>
@@ -50,7 +63,6 @@ fclose($fp);
         <form action="./add_ncode.php" method="post">
             <input type="hidden" name="ncode" value="<?php echo $ncode; ?>">
             <input type="hidden" name="title" value="<?php echo $novel_title; ?>">
-            <input type="hidden" name="ex" value="<?php echo $novel_ex; ?>">
             <input type="submit" name="submit" value="登録">
         </form>
     </body>

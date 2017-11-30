@@ -4,11 +4,6 @@ if(empty($_POST["ncode"])){
 }
 $ncode=$_POST["ncode"];
 $title=$_POST["title"];
-$ex=$_POST["ex"];
-require './create.php';
-$fp = fopen("./ncode/".$ncode."/ex",'w');
-fwrite($fp,$ex);
-fclose($fp);
 try{
 	$db=new SQLite3('./sqlite3/meta.sqlite3');
 } catch (Exception $ex) {
@@ -24,4 +19,6 @@ try{
 	exit();
 }
 $db->exec('create table data(id,subtitle)');
+    header("Location:./index.php");
+    exit();
 ?>
