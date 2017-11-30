@@ -1,6 +1,6 @@
 <?php
         try{
-            $db=new SQLite3('./meta.sqlite3');
+            $db=new SQLite3('./sqlite3/meta.sqlite3');
         } catch (Exception $ex) {
             print $e->getTraceAsString();
             exit();
@@ -11,7 +11,7 @@ if(!empty($_GET["ncode"])){
         $row=$result->fetchArray();
         $maintitle=$row["maintitle"];
         try{
-            $ncode_db=new SQLite3("./".$ncode.".sqlite3");
+            $ncode_db=new SQLite3("./sqlite3/".$ncode.".sqlite3");
         } catch (Exception $ex) {
             echo "そのような小説は存在しません";
             

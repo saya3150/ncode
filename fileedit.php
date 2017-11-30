@@ -4,7 +4,7 @@ $fp = fopen($filename,'r');
 $state=0;
 $array=array();
 try{
-	$db=new SQLite3('./'.$ncodeid.'.sqlite3');
+	$db=new SQLite3('./sqlite3/'.$ncodeid.'.sqlite3');
 } catch (Exception $ex) {
 	print $e->getTraceAsString();
 	exit();
