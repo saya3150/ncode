@@ -14,6 +14,7 @@ if(!empty($_GET["ncode"])){
             $ncode_db=new SQLite3("./".$ncode.".sqlite3");
         } catch (Exception $ex) {
             echo "そのような小説は存在しません";
+            
             exit();
         }
         $result=$ncode_db->query("select * from data");
@@ -33,6 +34,10 @@ if(!empty($_GET["ncode"])){
     <?php
         if(!empty($ncode)){
             echo "<h1>".$maintitle."</h1>";
+            echo "<table border><tr><td>話数</td><td>サブタイトル</td><td>洗濯</td></tr>";
+            while ($row=$result->fetchArray()){
+                echo "<tr><td>".$row["id"]."</td><td>".$row["subtitle"]."</td><td><a href='./view.php?ncode=".$ncode."&num=".$row["id"]."'>読む</a></td></tr>";
+            }
         }else{
             echo "読みたい小説を選択してください.";
             echo "<table border><tr><td>タイトル</td><td>選択</td></tr>";
