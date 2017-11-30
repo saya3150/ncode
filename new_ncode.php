@@ -15,7 +15,8 @@ $state=0;
 $fp = fopen("./".$ncode,'r');
 while ($line = fgets($fp)){
     if(strpos($line,'<p class="novel_title">') !== false){
-        $novel_title=$line;
+        $line=substr($line,23);
+        $novel_title=substr($line,0,strpos($line,"</p>"));
     }
     if(strpos($line,'<div id="novel_ex">') !== false){
         $state=1;
