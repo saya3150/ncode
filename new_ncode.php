@@ -12,7 +12,7 @@ if($ret == 8){
     exit();
 }
 $state=0;
-$fp = fopen("./index.html",'r');
+$fp = fopen("./".$ncode,'r');
 while ($line = fgets($fp)){
     if(strpos($line,'<p class="novel_title">') !== false){
         $novel_title=$line;
