@@ -26,7 +26,10 @@ if($fp){
 	while ($line = fgets($fp)){
 		if(strpos($line,'<p class="novel_subtitle">') !== false){
 		      $state=1;
-			$db->exec('insert into data values('.$atai.',"'.$line.'")');
+                      $line=substr($line,27);
+                      $line=substr($line,0,strpos($line,"</p>"));
+                      echo $line;
+			//$db->exec('insert into data values('.$atai.',"'.$line.'")');
                 }
 		if(strpos($line,'<div class="novel_bn">') !== false)$state=0;
 		if($state==1){
