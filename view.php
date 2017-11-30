@@ -1,12 +1,12 @@
 <?php
-	if(!empty($_POST["ncode"])){
-		$ncode=$_POST["ncode"];
+	if(!empty($_GET["ncode"])){
+		$ncode=$_GET["ncode"];
 	}else{
 		header("Location:./index.php");
 		exit();
 	}
-	if(!empty($_POST["num"])){
-		$num=$_POST["num"];
+	if(!empty($_GET["num"])){
+		$num=$_GET["num"];
 	}else{
 		header("Location:./index.php");
 		exit();	
