@@ -12,14 +12,14 @@
 		exit();	
 	}
 try{
-	$db=new SQLite3('./'.$ncode.'.sqlite3');
+	$db=new SQLite3('./sqlite3/'.$ncode.'.sqlite3');
 } catch (Exception $ex) {
 	print $e->getTraceAsString();
 	exit();
 
 }
 try{
-	$meta_db=new SQLite3('./meta.sqlite3');
+	$meta_db=new SQLite3('./sqlite3/meta.sqlite3');
 } catch (Exception $ex) {
 	print $e->getTraceAsString();
 	exit();
