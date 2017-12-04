@@ -29,6 +29,10 @@ $result=$meta_db->query("select * from meta where ncode='".$ncode."'");
 $row=$result->fetchArray();
 $maintitle=$row["maintitle"];
 $result=$db->query("select * from data where id=".$num);
+$prestory=$num-1;
+if($prestory==0){
+    $prestory=-1;
+}
 if(!($row=$result->fetchArray())){
     echo "<html><hea><meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\">";
     echo "<meta http-equiv=\"Refresh\" content=\"5;URL=./index.php\">";
@@ -38,6 +42,11 @@ if(!($row=$result->fetchArray())){
     exit();
 }
 $subtitle=$row["subtitle"];
+$afterstory=$num+1;
+$result=$db->query("select * from data where id=".$afterstory);
+if(!($row=$result->fetchArray())){
+    $afterstory=-1;
+}
 ?>
 <html>
 <head>
@@ -46,7 +55,6 @@ $subtitle=$row["subtitle"];
 </head>
 <body>
     <h1><?php echo $maintitle; ?></h1>
-    <h2><?php echo $subtitle; ?></h2>
     <p>
     <?php
         $filename = './ncode'.$ncode.'/'.$num.'.ncode';
@@ -58,5 +66,21 @@ $subtitle=$row["subtitle"];
     
     ?>
     </p>
+    <table border>
+    <?php  
+    
+    if($prestory >0){
+        echo "<tr><td><a href=\"./view.php?ncode=".$ncode."&num=".$prestory."\">前話</a></td>";
+    }else{
+        echo "<tr><td>　　</td>";
+    }
+        echo "<a href=\"./index.php?ncode=".$ncode."\">目次</a>";
+    if($afterstory >0){
+        echo "<tr><td><a href=\"./view.php?ncode=".$ncode."&num=".$prestory."\">次話</a></td>";
+    }else{
+        echo "<tr><td>　　</td>";
+    }
+    ?>
+    </table>
 </body>
 </html>
