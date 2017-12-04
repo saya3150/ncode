@@ -7,7 +7,7 @@
 */
 
 try{
-	$db=new SQLite3('./meta.sqlite3');
+	$db=new SQLite3('./sqlite3/meta.sqlite3');
 } catch (Exception $ex) {
 	print $e->getTraceAsString();
 	exit();
