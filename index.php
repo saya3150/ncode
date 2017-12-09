@@ -39,6 +39,7 @@ if(!empty($_GET["ncode"])){
                 echo "<tr><td>".$row["id"]."</td><td>".$row["subtitle"]."</td><td><a href='./view.php?ncode=".$ncode."&num=".$row["id"]."'>読む</a></td></tr>";
             }
         }else{
+            echo "小説を追加する場合は<a href='./new.php'>こちら</a>";
             echo "読みたい小説を選択してください.";
             echo "<table border><tr><td>タイトル</td><td>選択</td></tr>";
             while($row=$result->fetchArray()){
