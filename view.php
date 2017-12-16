@@ -57,7 +57,7 @@ if(!($row=$result->fetchArray())){
     <h1><?php echo $maintitle; ?></h1>
     <p>
     <?php
-        $filename = './ncode'.$ncode.'/'.$num.'.ncode';
+        $filename = './ncode/'.$ncode.'/'.$num.'.ncode';
         $fp = fopen($filename,'r');
         while ($line = fgets($fp)){
             echo $line;
@@ -76,7 +76,7 @@ if(!($row=$result->fetchArray())){
     }
         echo "<a href=\"./index.php?ncode=".$ncode."\">目次</a>";
     if($afterstory >0){
-        echo "<tr><td><a href=\"./view.php?ncode=".$ncode."&num=".$prestory."\">次話</a></td>";
+        echo "<tr><td><a href=\"./view.php?ncode=".$ncode."&num=".$afterstory."\">次話</a></td>";
     }else{
         echo "<tr><td>　　</td>";
     }

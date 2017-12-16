@@ -24,7 +24,7 @@ while($row=$result->fetchArray()){
 		if($ret == 8){
 		echo "New File get Error.";
 		$atai=$atai-1;
-		$db->exec("update meta set latest=".$atai." where ncode='".$ncodeid."'");
+		$db->exec("update meta set latest='".$atai."' where ncode='".$ncodeid."'");
 		break;
 		}else{
 		echo "New File get Success";
